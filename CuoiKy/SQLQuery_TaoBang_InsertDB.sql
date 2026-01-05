@@ -81,10 +81,18 @@ CREATE TABLE HoaDon (
 );
 
 -- 10. Bảng Nhật ký hệ thống (Để làm Trigger ghi log)
-CREATE TABLE HệThống_Log (
+--CREATE TABLE HệThống_Log (
+  --  LogID INT IDENTITY PRIMARY KEY,
+    --NoiDung NVARCHAR(MAX),
+    --NgayTao DATETIME DEFAULT GETDATE()
+--);
+CREATE TABLE HeThong_Log (
     LogID INT IDENTITY PRIMARY KEY,
+    TenBang NVARCHAR(50),
+    HanhDong NVARCHAR(50), -- INSERT, UPDATE, DELETE
     NoiDung NVARCHAR(MAX),
-    NgayTao DATETIME DEFAULT GETDATE()
+    NgayTao DATETIME DEFAULT GETDATE(),
+    NguoiThucHien NVARCHAR(100)
 );
 
 -- 1. Khoa
